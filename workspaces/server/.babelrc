@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "react",
+    "typescript",
+    ["env", {
+      "targets": {
+        "node": "current"
+      }
+    }]
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "syntax-class-properties",
+    "dynamic-import-node",
+    "syntax-dynamic-import"
+  ]
+}

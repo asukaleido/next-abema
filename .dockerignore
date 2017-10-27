@@ -1,0 +1,10 @@
+.git/
+docker
+node_modules
+public
+.babelrc
+.gitignore
+.node-version
+Makefile
+docker-compose.yml
+package.json

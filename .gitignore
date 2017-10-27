@@ -1,0 +1,7 @@
+node_modules
+
+public
+sndbox
+
+docker/frntend/nginx/server.crt
+docker/frntend/nginx/server.key

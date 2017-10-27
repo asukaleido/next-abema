@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "next-abema",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "workspaces": [
+    "workspaces/*"
+  ]
+}
