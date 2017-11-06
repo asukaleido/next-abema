@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as store from '../store/RouterStore';
-import HeaderContainer from '../../../../apps/src/header/container/HeaderContainer';
+import { HeaderContainer } from '../../../../apps/header';
 
 interface State {
   Container: React.ComponentClass<any>;
 }
 
-export default class Router extends React.PureComponent<{}, State> {
+export class RouterContainer extends React.PureComponent<{}, State> {
 
   state: State = {
     Container: null,

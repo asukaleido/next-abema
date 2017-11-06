@@ -5,7 +5,7 @@ interface Props {
   children: any;
 }
 
-export default class Link extends React.PureComponent<Props, {}> {
+export class Link extends React.PureComponent<Props, {}> {
 
   constructor() {
     super();

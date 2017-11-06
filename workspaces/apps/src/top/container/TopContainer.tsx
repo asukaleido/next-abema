@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-const TopContainer = () => (
+export const TopContainer = () => (
   <div>Top!!</div>
 );
-
-export default TopContainer;

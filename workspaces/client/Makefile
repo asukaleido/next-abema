@@ -4,12 +4,12 @@ PUBLIC_DIR ?= ../../public
 
 .PHONY: clean
 clean:
-	rm -rf $(SNDBOX_DIR)/client
-	rm -rf $(PUBLIC_DIR)/client
+	rm -rf $(SNDBOX_DIR)/assets
+	rm -rf $(PUBLIC_DIR)/assets
 
 .PHONY: build
 build: cpx
-	$(NPM_BIN_DIR)/webpack --hide-modules
+	$(NPM_BIN_DIR)/webpack --hide-modules -p
 
 .PHONY: watch
 watch: cpx
@@ -24,7 +24,7 @@ webpack_watch:
 
 .PHONY: cpx_babelrc
 cpx_babelrc:
-	$(NPM_BIN_DIR)/cpx "./.babelrc" ${SNDBOX_DIR}/client
+	$(NPM_BIN_DIR)/cpx "./.babelrc" ${SNDBOX_DIR}/assets
 
 .PHONY: cpx
 cpx: cpx_babelrc
@@ -35,15 +35,15 @@ __cpx: cpx_client cpx_core cpx_apps
 
 .PHONY: cpx_client
 cpx_client:
-	$(NPM_BIN_DIR)/cpx "src/**/*.*" ${SNDBOX_DIR}/client/client/src
+	$(NPM_BIN_DIR)/cpx "./**/*.*" ${SNDBOX_DIR}/assets/client
 
 .PHONY: cpx_core
 cpx_core:
-	$(NPM_BIN_DIR)/cpx "../core/src/**/*.*" ${SNDBOX_DIR}/client/core/src
+	$(NPM_BIN_DIR)/cpx "../core/**/*.*" ${SNDBOX_DIR}/assets/core
 
 .PHONY: cpx_apps
 cpx_apps:
-	$(NPM_BIN_DIR)/cpx "../apps/src/**/*.*" ${SNDBOX_DIR}/client/apps/src
+	$(NPM_BIN_DIR)/cpx "../apps/**/*.*" ${SNDBOX_DIR}/assets/apps
 
 .PHONY: cpx_watch
 cpx_watch: cpx_babelrc
@@ -54,12 +54,12 @@ __cpx_watch: cpx_watch_client cpx_watch_core cpx_watch_apps
 
 .PHONY: cpx_watch_client
 cpx_watch_client:
-	$(NPM_BIN_DIR)/cpx "src/**/*.*" ${SNDBOX_DIR}/client/client/src --verbose --watch
+	$(NPM_BIN_DIR)/cpx "./**/*.*" ${SNDBOX_DIR}/assets/client --verbose --watch
 
 .PHONY: cpx_watch_core
 cpx_watch_core:
-	$(NPM_BIN_DIR)/cpx "../core/src/**/*.*" ${SNDBOX_DIR}/client/core/src --verbose --watch
+	$(NPM_BIN_DIR)/cpx "../core/**/*.*" ${SNDBOX_DIR}/assets/core --verbose --watch
 
 .PHONY: cpx_watch_apps
 cpx_watch_apps:
-	$(NPM_BIN_DIR)/cpx "../apps/src/**/*.*" ${SNDBOX_DIR}/client/apps/src --verbose --watch
+	$(NPM_BIN_DIR)/cpx "../apps/**/*.*" ${SNDBOX_DIR}/assets/apps --verbose --watch

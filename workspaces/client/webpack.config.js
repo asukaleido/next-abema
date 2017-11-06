@@ -9,12 +9,12 @@ module.exports = {
   },
 
   entry: {
-    app: '../../sndbox/client/client/src/client.tsx',
+    app: '../../sndbox/assets/client/index.ts',
   },
 
   output: {
     filename: '[chunkhash].js',
-    path: path.join(__dirname, '../../public/client'),
+    path: path.join(__dirname, '../../public/assets'),
     publicPath: '/assets/',
   },
 

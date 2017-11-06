@@ -1,18 +1,11 @@
-import UniversalRouter from 'universal-router';
+import * as RouterAction from './action/RouterAction';
+export { RouterAction };
 
-const routes = [
-  {
-    path: '',
-    async action() {
-      return await import('../../../apps/src/top/container/TopContainer');
-    },
-  },
-  {
-    path: '/timetable',
-    async action() {
-      return await import('../../../apps/src/timetable/container/TimetableContainer');
-    },
-  },
-];
+export * from './container/RouterContainer';
 
-export default new UniversalRouter(routes);
+import * as RouterDispatcher from './dispatcher/RouterDispatcher';
+export { RouterDispatcher };
+
+
+import * as RouterStore from './store/RouterStore';
+export { RouterStore };

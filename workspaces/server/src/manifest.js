@@ -1,3 +1,3 @@
-import manifest from '../../../client/manifest.json';
+import manifest from '../../../assets/manifest.json';
 
 export default manifest;

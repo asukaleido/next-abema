@@ -8,11 +8,11 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | bash \
   && ~/.yarn/bin/yarn \
   && rm -rf ~/.npm
 
-RUN ln -sf /home/repo/public/server /var/www/server \
- && ln -sf /home/repo/public/client /var/www/client
+RUN ln -sf /home/repo/public/nodejs /var/www/nodejs \
+ && ln -sf /home/repo/public/assets /var/www/assets
 
 WORKDIR /var/www
 
-ENTRYPOINT ["./node_modules/.bin/pm2", "start", "server/server/src/server.js", "--node-args=\"--inspect=9229\"", "--no-daemon", "--watch"]
+ENTRYPOINT ["./node_modules/.bin/pm2", "start", "nodejs/server/index.js", "--node-args=\"--inspect=9229\"", "--no-daemon", "--watch"]
 
 EXPOSE 3000 9229

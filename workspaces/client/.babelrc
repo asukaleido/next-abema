@@ -6,6 +6,7 @@
       "targets": {
         "browser": "last 2 versions"
       },
+      "modules": false,
       "useBuiltIns": "usage"
     }]
   ],
